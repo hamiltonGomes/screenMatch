@@ -4,11 +4,14 @@ import br.com.alura.screenmatch.modelos.Episodio;
 import br.com.alura.screenmatch.modelos.Filme;
 import br.com.alura.screenmatch.modelos.Serie;
 
+import java.util.ArrayList;
+
 public class Principal {
     public static void main(String[] args) {
         Filme meuFilme = new Filme();
         Serie minhaSerie = new Serie();
-        Filme outroFilme = new Filme();
+        var outroFilme = new Filme(); //funciona da mesma forma se tivesse "Filme"
+        ArrayList<Filme> listaFilmes = new ArrayList<>();
 
         outroFilme.setNome("Top Gun");
         outroFilme.setAnoDeLancamento(2023);
@@ -26,6 +29,11 @@ public class Principal {
         minhaSerie.setEpisodiosPorTemporada(7);
         minhaSerie.setMinutosPorEpisodio(50);
         minhaSerie.setIncluidoNoPlano(true);
+
+        listaFilmes.add(meuFilme);
+        listaFilmes.add(outroFilme);
+        System.out.println(listaFilmes.get(0).getNome());
+        System.out.println(listaFilmes.size());
 
         //atrobuindo notas:
         meuFilme.avalia(8);
