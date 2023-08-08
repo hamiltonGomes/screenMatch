@@ -4,6 +4,8 @@ import br.com.alura.screenmatch.modelos.Episodio;
 import br.com.alura.screenmatch.modelos.Filme;
 import br.com.alura.screenmatch.modelos.Serie;
 
+import java.util.ArrayList;
+
 public class Principal {
     public static void main(String[] args) {
         Filme meuFilme = new Filme();
@@ -27,7 +29,6 @@ public class Principal {
         minhaSerie.setMinutosPorEpisodio(50);
         minhaSerie.setIncluidoNoPlano(true);
 
-        //atrobuindo notas:
         meuFilme.avalia(8);
         meuFilme.avalia(5);
         outroFilme.avalia(10);
@@ -52,5 +53,11 @@ public class Principal {
         ep.setTotalVisualizacoes(130);
         filtro.filtra(ep);
 
+        ArrayList<Filme> listaDeFilmes = new ArrayList<>(); // irá armazenar objetos da classe Filme
+        listaDeFilmes.add(meuFilme);
+        listaDeFilmes.add(outroFilme);
+        System.out.println("Tamanho da lista: " + listaDeFilmes.size());
+        System.out.println("O meu filme é: " + listaDeFilmes.get(0).getNome());
+        System.out.println(listaDeFilmes);
     }
 }
