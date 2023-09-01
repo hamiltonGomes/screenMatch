@@ -41,5 +41,4 @@ public class Serie extends Titulo {
     public int getDuracaoEmMinutos() { /// esse método sobrescreve um outro método da classe Título
         return temporadas * episodiosPorTemporada * minutosPorEpisodio;
     }
-
 }
